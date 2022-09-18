@@ -51,6 +51,10 @@ body{
               0 8px 8px rgba(0,0,0,0.15);
 }
 
+.header p{
+    font-family: roboto-superbold;
+}
+
 .content{
     flex: 5;
     margin: 0px;
@@ -88,14 +92,14 @@ body{
 
 .add-cards:hover,.cards:hover { transform: scale(1.05); }
 
-.cards p,#author,#summary,#pages,#status{
+.cards p,.author,.summary,.pages,.status{
     margin: 0px;
     color: #9d174d;
     line-height: 1.5;
     font-size: 14px;
 }
 
-#author,#pages,#status{
+.author,.pages,.status{
     padding-left: 2vh;
     font-style: italic;
     font-weight: bold;
@@ -153,17 +157,30 @@ hr.solid{
     margin: 0px;
     text-align: center;
 }
+.dialogContainer{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #C0C0C0;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4;
+}
 
 .add-book-dialog{
+    position: absolute;
+    top: 25vh;
     background-color: white;
     border-radius: 8px;
-    position: absolute;
-    top: 30vh;
     box-shadow: 0 6px 6px rgba(0,0,0,0.15), 
     0 2px 2px rgba(0,0,0,0.15), 
     0 4px 4px rgba(0,0,0,0.15), 
     0 8px 8px rgba(0,0,0,0.15);
+    z-index: 10000000;
     width: 20vw;
+    opacity: 1;
 }
 
 fieldset{
@@ -213,4 +230,8 @@ h4{
     0 2px 2px rgba(0,0,0,0.15), 
     0 4px 4px rgba(0,0,0,0.15), 
     0 8px 8px rgba(0,0,0,0.15);
+}
+
+.cards:nth-child(2){
+    display: none;
 }
