@@ -16,32 +16,31 @@
             <hr class="solid">
             <fieldset>
                 <label>Title</label>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="form-title">
             </fieldset>
             <fieldset>
                 <label>Summary</label>
-                <textarea id="" name="" rows="4">
-                </textarea>
+                <textarea id="form-summary" name="" rows="4"></textarea>
             </fieldset>
             <fieldset>
                 <label>Author</label>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="form-author">
             </fieldset>
             <fieldset>
                 <label>Pages</label>
-                <input type="text" name="" id="">
+                <input type="number" name="form-pages" id="">
             </fieldset>
             <fieldset>
                 <div class="radioBtnContainer">
                     <label>Read</label>
-                    <input type="radio" name="status" id="">
+                    <input type="radio" name="form-status" id="" value="read">
                     <label>Unread</label>
-                    <input type="radio" name="status" id="">
+                    <input type="radio" name="form-status" id="" value="unread">
                 </div>
             </fieldset>
             <fieldset class="formBtns">
-                <button class="add">Add</button>
-                <button class="close">Close</button>
+                <button type="submit" class="add">Add</button>
+                <button type="button" class="close">Close</button>
             </fieldset>
         </form>
     </div>
@@ -54,15 +53,18 @@
         <div class="cards add-cards">
             <i class="mdi mdi-plus add-cards"></i>
         </div>     
-        <div class="cards">
+        <div class="cards" data-index="">
             <div class="title">
-                <p >Nier Automata</p>
+                <p id="title">Nier Automata</p>
                 <hr class="solid">
             </div>
-            <p class="summary">
+            <p id="summary" class="summary">
                 You are an android in a dystopian world fighting murder hobo robots thingy majiggy. There is a lot of metaphors that
                 normal wet brain people might find hard to understand.
             </p>
+            <i id="author" class="mdi mdi-account-edit">Yoko Taro</i>
+            <i id="pages" class="mdi mdi-book-open-page-variant-outline">125 pages</i>
+            <p id="status">Read</p>
             <div >
                 <hr class="solid">
                 <div class="options">

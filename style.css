@@ -88,9 +88,17 @@ body{
 
 .add-cards:hover,.cards:hover { transform: scale(1.05); }
 
-.cards p{
+.cards p,#author,#summary,#pages,#status{
     margin: 0px;
     color: #9d174d;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+#author,#pages,#status{
+    padding-left: 2vh;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .title{
@@ -103,8 +111,7 @@ body{
     flex:3;
     padding-left: 8px;
     overflow:hidden;
-    line-height: 1.5;
-    font-size: 14px;
+
 }
 
 .options{
