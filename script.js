@@ -66,6 +66,9 @@ function addBookToLibrary(form) {
     const newNode = createNode(newBook,newIndex);
     let content = document.querySelector('.content');
     content.appendChild(newNode);
+
+    newNode.querySelector(".updateBtn").addEventListener('click',(e)=> updateBook(e.target.getAttribute('data-index')));
+    newNode.querySelector(".removeBtn").addEventListener('click',(e)=> removeBook(e.target.getAttribute('data-index')));
  }
 
  function loadLibrary(){
@@ -105,6 +108,26 @@ function addBookToLibrary(form) {
     updatedCard.querySelector(`.status`).textContent = myLibrary[bookIndex].status;
  }
 
+ function removeBook(bookIndex){
+    myLibrary.splice(bookIndex,1);
+    let cards = document.querySelectorAll('.cards:nth-child(n+3)');
+    console.log(cards);
+    Array.prototype.forEach.call( cards, function( node ) {
+        node.parentNode.removeChild( node );
+    });
+
+    loadLibrary();
+    addUpdateRemoveEvents()
+ }
+
+ function addUpdateRemoveEvents(){
+    const updateButtons = document.querySelectorAll(".updateBtn");
+    updateButtons.forEach(item=>item.addEventListener('click',(e)=> updateBook(e.target.getAttribute('data-index'))));
+
+    const removeButtons = document.querySelectorAll(".removeBtn");
+    removeButtons.forEach(item=>item.addEventListener('click',(e)=> removeBook(e.target.getAttribute('data-index'))));
+ }
+
 const addDialog = document.querySelector(".add-book-dialog");
 const addDialogContainer = document.querySelector(".dialogContainer");
 
@@ -125,7 +148,5 @@ submit.addEventListener('submit', e => {
 });
 
 loadLibrary();
-
-const updateButtons = document.querySelectorAll(".updateBtn");
-updateButtons.forEach(item=>item.addEventListener('click',(e)=> updateBook(e.target.getAttribute('data-index'))));
+addUpdateRemoveEvents();
 
